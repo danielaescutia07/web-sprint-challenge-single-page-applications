@@ -1,13 +1,20 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Assets from './Assets/Pizza.jpg';
 
-const homePage = () => {
+const HomePage = () => {
+
+    const history = useHistory();
+
+    const routeToOrder = () => {
+    history.push("/pizza");
+}
     return (
      <div>
          <img src={Assets} alt="pizza"/>
-         <button id="order-pizza">Order Now</button>
+         <button onClick={routeToOrder} id="order-pizza">Order Now</button>
      </div>
     )
 }
 
-export default homePage;
+export default HomePage;
